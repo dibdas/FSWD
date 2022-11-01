@@ -1,0 +1,46 @@
+section{
+    margin: auto;
+    width:40%;
+    
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.list{
+    display: flex;
+
+    
+}
+section{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: orange;
+}
+.menu-item{
+   
+    flex-direction: column;
+    width: 90%;
+   
+}
+.text{
+    border:1px solid green;
+    display: block;
+}
+.amount{
+    background-color: orange;
+    color: black;
+    width: 10%;
+    align-items: center;
+    display:flex;
+    justify-content: space-around;
+}
+.heading{
+    border:1px solid black; 
+    padding-left:1em;
+    width: 85%;
+}
+.name{
+    font-size: 20px;
+    font-weight: 200;
+    font-family: 'Courier New', Courier, monospace;
+}
