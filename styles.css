@@ -1,9 +1,4 @@
-section{
-    margin: auto;
-    width:40%;
-    
-    font-family: 'Courier New', Courier, monospace;
-}
+
 
 .list{
     display: flex;
@@ -15,6 +10,11 @@ section{
     flex-direction: column;
     background-color: black;
     color: orange;
+    margin: auto;
+    width:40%;
+    
+    font-family: 'Courier New', Courier, monospace;
+    
 }
 .menu-item{
    
@@ -23,7 +23,7 @@ section{
    
 }
 .text{
-    border:1px solid green;
+
     display: block;
 }
 .amount{
@@ -33,9 +33,11 @@ section{
     align-items: center;
     display:flex;
     justify-content: space-around;
+    margin-right:1em ;
+
 }
 .heading{
-    border:1px solid black; 
+   
     padding-left:1em;
     width: 85%;
 }
