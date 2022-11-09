@@ -1,0 +1,80 @@
+/* *{
+    box-sizing: border-box;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} */
+
+
+.green1{
+    background-color: green;
+    width: 40vw;
+    height: 30vh;
+    margin-bottom: 10rem;
+  
+    
+}
+.box{
+    /* width: 20vw;
+    height:20vh; */
+    width:200px;
+    height: 200px;
+    border: 20px solid black;
+
+    /* margin:30px; */
+    padding: 20px;
+    margin-inline: auto; /*providing equal margin on both sides left and right,
+     making the whole at the center horizontally*/
+
+/* 
+    by using border-box, the border of the box gets included in the height and the width of the 
+    content and eventually the height and width gets decreased of the content
+    box-sizing should be used because box does not behave unnatuarally ,and 
+    it tells that border comes within the defined dimensions of the box, 
+    and not taking external width or height: 
+    therefore should be defined at the top universal selector
+    hightly recommended and try to use it universally */
+
+    box-sizing: border-box; 
+    /* if the box-sizing value is content box or nothing, then the border is not included in the
+     dimension of the content
+    it is same as without using box sizing property;
+    by default value of box-sizing is content box */
+
+/* 
+    if width:200 and height:400,
+    then border-box will take 200X400 not extra
+    but without border-box i.e content-box it will take more than 200X400 , only the content is included
+    basically without border-box the content is taking more than the defined height and width, 
+    with border-box , the content width and height includes the border,padding and content
+    therefore is taking the defined height and width in it
+    box-sizing: content-box; */
+  
+}
+
+.box1{
+    width: 20vw;
+    height:20vh;
+    border: 20px solid black;
+    
+    margin:30px;
+    padding:10px 20px 30px 40px;  /* --->top: 10px; :right: 20px  bottom: 30px; left: 40px;  */
+
+    margin: 20px 30px 40px; /*--->top: 20px; left: 30px; :right: 30px bottom: 40px; */
+
+    margin: 30px 20px;  /*top and bottom is 30px left and right is 20px */
+
+
+}
+
+.red1{
+    background-color: red;
+}
+.blue1{
+    background-color:blue;
+}
+.violet1{
+    background-color: violet;
+}
