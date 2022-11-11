@@ -1,0 +1,63 @@
+p tag is block element
+a tag is an inline element
+
+every tag has a default margin and padding,in order to 
+eliminate the default margin and padding,we do This
+*{
+    padding:0;
+    margin:0
+}
+
+inline elements like
+ <span></span><i></i><a></a><b></b><strong></strong>
+
+display:inline
+and the display is inline then it 
+flows from left to right , they consider
+left and right margin and padding if given ,
+they ignore the top and the bottom margin and padding ,even
+if it is given,
+they only consider the left and right margin and padding
+inline elements consider as per to the size of the content
+inline elements does nt take the external width,if defined
+it takes only the space i.e the width , the content is taking
+in order to make the inline elements or the inline styling
+consider to the width and height property ,we make 
+it inline-block
+
+
+whereas block elements like
+h1 to h6, p, div, form, header, footer,they consider the
+top and bottom margin and padding, by default and
+also while  given to them
+they move from top and bottom
+
+we are treating img as inlne block elements
+img is an inline-block
+inline-block elements allow us to set width height to it 
+but it does nt goes to the next line 
+inline-block elements doe snot go to the next line 
+Also, with display: inline-block , the top and bottom margins/paddings are
+respected, but with display: inline they are not.
+
+display:none; it removes the element from the html tree
+
+float is used to align the inline elements right or left,
+as the the inline element moves from left to right , it helps in 
+positioning them
+
+
+
+/* inline-block and float does not in  the same class */
+
+/* overflow-x: scroll;
+    overflow-y: auto; */
+/* same as the above */
+    overflow: scroll auto; same as above
+
+in order to break the css normal flow we use css position property
+
+
+
+
+
