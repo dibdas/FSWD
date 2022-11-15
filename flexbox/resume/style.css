@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size:16px;
+}
+body{
+    background-color: aquamarine;
+}
+.container{
+    display: flex;
+    margin-inline: auto;
+}
+.left-container{
+    width:30%;
+
+}
+.right-container{
+    width:60%;
+}
+.image-box{
+    width:15vw;
+    position: relative;
+}
+.image-box img{
+    width: 100%;
+}
+h2{
+    position: absolute;
+    /* top:7rem; */
+    /* OR */
+    bottom:0.1rem;
+    left:3rem;
+    color:aliceblue;
+    font-size: 2.5rem;
+}
+.icon-text{
+    display: flex;
+    gap:1rem;
+}
+i{
+    color: green;
+}
+.pogress-bar{
+    background-color: aliceblue;
+    /* border: 2px solid blue; */
+    border-radius: 10px;
+    
+}
+.pogress{
+    background-color:maroon;
+    color: whitesmoke;
+    /* width: 90%; */
+    /* border: 5px solid green ; */
+    border-radius: 10px;
+    text-align: center;
+ 
+
+}
