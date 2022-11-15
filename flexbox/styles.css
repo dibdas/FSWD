@@ -1,0 +1,79 @@
+
+*{
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.container{
+    height:40vh;
+    border: 2px solid red;
+    display: flex;
+    /* flex-direction: column-reverse; */
+    flex-direction: row;
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
+    /* align-items & justify-content is parent property; */
+    /* align-items: stretch; default value of align-items is stretch, and 
+    it takes the full height or width respective to flex-direction: row or column;
+    of the container if not defined  */
+    /* justify-content: center; */
+    justify-content: space-around;
+    /* align-items: flex-start; */
+    /* align-items: baseline; */
+    align-items: center;
+    /* align-items: stretch; */
+    /* space between the children of this container */
+    /* row-gap: 1rem;
+    column-gap: 2rem; */
+    /* gap: 1rem 2rem; */
+    /* tells about the content & how it appears in the container , during wrapping or shrinking */
+    /* align-content manages the space between the lines when items wrap or screen shrinks */
+    /* align-content works only on multi-line containers and has no effect on single line containers. */
+    /* align-content help the content distributing the flex lines ; */
+    align-content: center;
+  
+}
+.box{
+    border:2px solid green;
+    width:4rem;
+    /* height: 3rem; */
+    /* all the children are growing  */
+    /* flex-grow: 1; */
+    /* flex-basis: it defines the initial length of the item which depends on the major axis i.e 
+    defined by flex-direction row or column; by default the major-axis is row , if the flex-direction
+    is column ,then flex-basis is the height of the item , if the flex-direction is row, then 
+    flex-basis is the height of the item, flex-wrap: should be there value is flex-wrap:wrap */
+    flex-basis: 25%;
+    /* flex-basis: 35%; */
+    
+}
+
+#box-3{
+
+    /* order:-1; */
+    /* order: 1; */
+      /* this children is growing relatively twice to other flex  items */
+    /* flex-grow: 2; */
+
+    /* align-self is for the specific flex item does not go with flex-wrap which is defined in the 
+    parent-container, there should not be any flex-wrap in the parent container, while defining 
+    the align-self */
+    align-self:flex-start;
+}
+#box-2{
+    order:2;
+    /* this children is growing relatively  3 time to other flex  items*/
+    /* flex-grow: 3; */
+}
+#box-6{
+    /* this children is growing  relatively 5 times to the other flex-items */
+    /* flex-grow: 5; */
+    /* flex-shrink: 6; */
+
+    /* only this item will have height 25% if the flex direction is column,
+    or the width is 25% if the flex-direction: is row; */
+
+    /* flex-basis: 25%; */
+   
+
+}
