@@ -4,17 +4,47 @@ body{
 .container{
     margin-inline: auto;
     background-color: rgba(57, 224, 85, 0.887);
+    /* position: relative; */
     
 }
 .cat-outside{
-    width:80px;
-    /* after defining position :relative it comes out of the css natural  flow and can be positioned by using top right left and bottom */
-    position: relative; 
+    width:100px;
+    border: 1px solid red;
+    /* after defining position :relative it comes out of the css natural flow , but the space of that 
+    element, which is defined as relative is still there ,thats why the container is visible and can
+     be positioned by using top right left and bottom, */
+
+
+
+    /* after defining position :absolute no space is left for the element after declaring position:absolute
+     green color container not visible , its gone, and it is overlapping with the text i.e this is a cat
+    in position :absolute, it works relative to the parent which position is relative , if the parent
+     not found relative, then it works relative to the html */
+    /* generally while positioning the absolute, parent is defined as relative */
+    /* if parent is relative top, right and left will work as per to the parent or if the parent is not
+    relative top, right , left will work relative to the HTML */
+
     /* position:absolute; */
+    /* position: fixed; */
+
+    position: sticky;
+    /* ;relative to the parent container, it will stick to 200 px while scrolling from top to bottom
+    and will go out of the screen as it reaches the edge of the container 
+    while scrolling from bottom to top it will come down to 100px and will stick over there and 
+    again while it will gone as we scroll up , it will vanish with the parent 
+    not necessary to define relative in the parent container
+    top is mandatory in sticky  */
+    top:200px;
+    /* relative to the parent container */
+    left: 20px; 
+    
+    
+    
+
     /* top: 50px; it means from the above its shifting down by 50px relative to the parent, as the position is defined as relative*/
-    top: 50px;
+    /* top: 50px; */
     /* left:40px; it means from the left it is shifting to the right  by 40px relative to the parent, as the position is defined as relative */
-    left:40px;
+    /* left:40px; */
     /* defining margin,  increases the margin of the parent container and it becomes big , hence it does not help in positioning the image*/
     /* margin-top: 50px;
     margin-left: 40px; */
@@ -31,7 +61,9 @@ body{
     background-color:aliceblue;
     padding:40px;
     /* border-radius: 50% 50%; */
+    
     border-radius: 50% 10px;
+    /* border-radius: 10px; */
     /* overflow: hidden; */
 }
 /* making the paragraphs float right and left */
@@ -89,4 +121,7 @@ nothing should float at the left side of the paragraph or the content */
     overflow-y: auto; */
     /* same as the above */
     overflow: scroll auto; 
+}
+.spacer{
+    height: 200vh;
 }

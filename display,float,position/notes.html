@@ -32,7 +32,7 @@ top and bottom margin and padding, by default and
 also while  given to them
 they move from top and bottom
 
-we are treating img as inlne block elements
+we are treating img as inline block elements
 img is an inline-block
 inline-block elements allow us to set width height to it 
 but it does nt goes to the next line 
@@ -46,6 +46,8 @@ float is used to align the inline elements right or left,
 as the the inline element moves from left to right , it helps in 
 positioning them
 
+display:inline-block; & margin-inline probably does not work at the same time
+
 
 
 /* inline-block and float does not in  the same class */
@@ -57,6 +59,185 @@ positioning them
 
 in order to break the css normal flow we use css position property
 
+absolute
+in absolute no space is left for the 
+
+
+** important
+inorder to make two container or div side by side align with each other horizontally
+ of the page use float and display:inline-block vice-versa
+example:-
+.parentcontainer{
+    display:inline-block
+}
+.left-container{
+    float:left
+}
+.right-container{
+    float:right
+}
+OR
+.left{
+    width:60%;
+    display:inline-block;
+}
+.right{
+    width:30%;
+    float:right
+}
+OR
+.left{
+    width:60%;
+    float:left
+}
+.right{
+    width:30%;
+    float:right
+}
+OR
+.left{
+    width:60%;
+    float:left
+}
+.right{
+    width:30%;
+    display:inline-block;
+}
+
+
+
+
+
+/// kittens////......................
+
+
+body{
+    background-color: lightblue;
+}
+.container{
+    margin-inline: auto;
+    background-color: rgba(57, 224, 85, 0.887);
+    /* position: relative; */
+    
+}
+.cat-outside{
+    width:100px;
+    border: 1px solid red;
+    /* after defining position :relative it comes out of the css natural flow , but the space of that 
+    element, which is defined as relative is still there ,thats why the container is visible and can
+     be positioned by using top right left and bottom, */
+
+
+
+    /* after defining position :absolute no space is left for the element after declaring position:absolute
+     green color container not visible , its gone, and it is overlapping with the text i.e this is a cat
+    in position :absolute, it works relative to the parent which position is relative , if the parent
+     not found relative, then it works relative to the html */
+    /* generally while positioning the absolute, parent is defined as relative */
+    /* if parent is relative top, right and left will work as per to the parent or if the parent is not
+    relative top, right , left will work relative to the HTML */
+
+    /* position:absolute; */
+    /* position: fixed; */
+
+    position: sticky;
+    /* ;relative to the parent container, it will stick to 200 px while scrolling from top to bottom
+    and will go out of the screen as it reaches the edge of the container 
+    while scrolling from bottom to top it will come down to 100px and will stick over there and 
+    again while it will gone as we scroll up , it will vanish with the parent 
+    not necessary to define relative in the parent container
+    top is mandatory in sticky  */
+    top:200px;
+    /* relative to the parent container */
+    left: 20px; 
+    
+    
+    
+
+    /* top: 50px; it means from the above its shifting down by 50px relative to the parent, as the position is defined as relative*/
+    /* top: 50px; */
+    /* left:40px; it means from the left it is shifting to the right  by 40px relative to the parent, as the position is defined as relative */
+    /* left:40px; */
+    /* defining margin,  increases the margin of the parent container and it becomes big , hence it does not help in positioning the image*/
+    /* margin-top: 50px;
+    margin-left: 40px; */
+
+ /* 
+     top:-30px; it means from the above its shifting above by 30px relative to the parent, as the position is defined as relative
+    top:-30px;
+        left:-20px; it means from left it is shifting to the left by 20px relative to the parent, as the position is defined as relative
+    left:-20px; */
+
+}
+.text-box{
+    width: 90%;
+    background-color:aliceblue;
+    padding:40px;
+    /* border-radius: 50% 50%; */
+    
+    border-radius: 50% 10px;
+    /* border-radius: 10px; */
+    /* overflow: hidden; */
+}
+/* making the paragraphs float right and left */
+.kitty-image{
+    width:300px;
+    /* float: left; */
+    float: right;
+}
+.bottom-kitty{
+    width:300px;
+    float: left;
+}
+
+/* the paragraph is telling it does not want to float to the right by using clear :right */
+/* clear:right it means nothing should be there at the right side of the paragraph ,it means
+nothing should float at the right side of the paragraph o the content*/
+.top-para{
+    clear: right;
+}
+/* the paragraph is telling it does not want to float to the :left by using clear :left */
+/* clear:left it means nothing should be there at the left side of the paragraph,it means
+nothing should float at the left side of the paragraph or the content */
+.bottom-para{
+    clear:left;
+}
+
+.main{
+    width:100vw;
+    height: 100vh;
+}
+.top{
+    width:100%;
+    height:100px;
+    background-color: lightseagreen;
+}
+/* inline-block and float does not in  the same class */
+.left{
+    width:60%;
+    height:100%;
+    background-color: magenta;
+    display: inline-block;
+}
+.right{
+    width:40%;
+    height:100%;
+    background-color: brown;
+    float: right;
+}
+
+.text-wrapper{
+    width:400px;
+    border:5px solid red;
+    height: 400px;
+    /* overflow-x: scroll;
+    overflow-y: auto; */
+    /* same as the above */
+    overflow: scroll auto; 
+}
+.spacer{
+    height: 200vh;
+}
 
 
 
