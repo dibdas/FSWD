@@ -42,7 +42,8 @@
     /* flex-basis: it defines the initial length of the item which depends on the major axis i.e 
     defined by flex-direction row or column; by default the major-axis is row , if the flex-direction
     is column ,then flex-basis is the height of the item , if the flex-direction is row, then 
-    flex-basis is the height of the item, flex-wrap: should be there value is flex-wrap:wrap */
+    flex-basis is the height of the item, flex-wrap: should be there value is flex-wrap:wrap 
+    flex-basis  should always be written in the children */
     flex-basis: 25%;
     /* flex-basis: 35%; */
     
