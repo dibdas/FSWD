@@ -51,6 +51,8 @@
     with border-box , the content width and height includes the border,padding and content
     therefore is taking the defined height and width in it
     box-sizing: content-box; */
+
+     /* margin-block works for top and bottom like margin-inline */
   
 }
 

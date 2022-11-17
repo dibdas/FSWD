@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
     margin-inline: auto;
+    font-size: 16px;
   
 }
 .general{
@@ -23,7 +24,7 @@
 
 .card{
     width: 24vw;
-    height: 70vh;
+    height: 20%;
     border: 5px solid black;
     margin-top: 20px ;
 }
@@ -37,9 +38,11 @@ h1{
 .details{
  
     width: 95%;
+    font-size: 2rem;
 }
 button{
     background-color: black;
     color: whitesmoke;
-    padding: 10px;
+    padding: 0.5em;
+    margin-bottom:1em;
 }
