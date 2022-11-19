@@ -1,0 +1,51 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box
+}
+body{
+    display: grid;
+    /* defining three columns */
+    grid-template-columns: 20% auto 20%;
+    /* any name can be given here in place of hd nv mn ad and ft */
+    /* single course we have defined first row second row and then third row
+    first row is hd second row is mn mv and hd 
+    third row is ft ft ft */
+    /* grid-template-areas:'hd hd hd'
+                        'nv mn ad'
+                        'ft ft ft';  */
+    grid-template-areas:'head head head'
+                        'nav main adver'
+                        'foot foot foot';
+}
+header{
+    /* grid-area: hd; */
+    grid-area: head;
+
+}
+.advertisement{
+    /* grid-area: ad; */
+    grid-area: adver
+
+}
+.red-box{
+    border: 3px solid red;
+    height:20vh;
+}
+
+main{
+    /* grid-area: mn; */
+    grid-area: main;
+}
+.navigation{
+    /* grid-area: nv; */
+    grid-area: nav;
+    making the box at th end
+    align-self: end;
+
+}
+footer{
+    grid-area: ft;
+    grid-area: foot
+
+}

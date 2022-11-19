@@ -1,0 +1,35 @@
+.container>.box#box${$}*14
+
+.container>.box-$*4     4boxes with class naming in serial order
+
+.container>.box-${box-$}*6  6boxes with class naming in serial order written box- in serial order 
+
+
+height does not need to mention while using grid, it will be take care accordingly, as per to 
+the content
+
+align-content works good with display grid 
+
+center  an element inside a container using grid
+
+
+
+.container-3{
+    display: grid;
+    margin-top: 5rem;
+    width:40vw;
+    height:40vh;
+    border:1px solid blue;
+
+    /* justify-content: center;
+    align-content: center; */
+
+}
+.box-31{
+    width: 5rem;
+    height: 5rem;
+    /* replacemnet of justify-content: & align-items: is justify-self & align-self */
+    justify-self: center;
+    align-self: center;
+    border: 1px solid red;
+}
