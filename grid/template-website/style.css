@@ -40,7 +40,7 @@ main{
 .navigation{
     /* grid-area: nv; */
     grid-area: nav;
-    making the box at th end
+    /* making the box at th end */
     align-self: end;
 
 }
