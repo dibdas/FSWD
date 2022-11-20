@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --brown-color: brown;
+
+}
+.container{
+    /* width:20vw; */
+    /* height: 30vh; */
+    /* display: flex; */
+    /* aspect-ratio: width/ height; */
+    /* same width same height either of height or width is defined  */
+    /* aspect-ratio:1 / 1;  */
+    /* width is 2 times that of height, either of height or width is defined; */
+    /* aspect-ratio: 2 / 1;  */
+    /* width:200px; */
+    /* width:calc(100% - 100px); */
+    /* width: calc(100vw - 100px); */
+    /* max will take the width which is bigger between 300px or the  50% of the screen*/
+    /* max function help us in determining the minimum width */
+    width: max(300px, 50%);
+    /* max function will take the maximum width from the defined values */
+    width: max(300px,50%,70vw,500px);
+    /* min function will take the minimum value from the defned values */
+    width: min(100%,800px);
+    aspect-ratio: 1/1;
+    border:2px solid green;
+    margin-inline: auto;
+}
+.box{
+    border: 2px solid red;
+    display: inline-block;
+    /* width can be determined by using calc() , byusing parent width */
+    /* width:calc(30vh/5); */
+    width:calc(500px/9);
+    height: min(40px,20%);
+}
+
+button{
+    background-color: var(--brown-color);
+}
