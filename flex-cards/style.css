@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    width: 50vw;
+    margin-inline: auto;
+  
+
+    gap: 1rem;
+    /* justify-content: center; */
+    margin-block: 5rem ;
+    border: 1px solid red;
+    flex-basis:33%;
+
+}
+h2{
+    background-color: black;
+    color: aliceblue;
+    padding: 1rem 4rem;
+}
+.card{
+    /* padding: 2rem 4rem ; */
+    text-align: center;
+    border: 1px solid grey;
+    width:33%;
+}
+.pad-style{
+    padding:1rem;
+}
+.price-style{
+    padding: 1rem;
+}
+.dollar{
+    padding-block:0.7rem
+}
+.button{
+    background-color: grey;
+    padding: 1rem;
+}
+.border-light{
+    border-bottom: 1px solid lightgray;
+}
+.btn{
+    background-color: lightgreen;
+    padding: 0.4rem;
+    color: white
+}

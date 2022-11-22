@@ -1,0 +1,58 @@
+.box{
+    width:20rem;
+    height: 20rem;
+    background-color: aquamarine;
+    /* margin: 10rem auto; */
+    font-size: 2rem;
+    /* box will increase in size as increase the value of scale */
+    /* scale up */
+    /* transform:scale(2); */
+    /* scale down */
+    /* transform: scale(0.5); */
+    /* default scale */
+    /* transform: scale(1); */
+    position: absolute;
+    top:30%;
+    left:30%;
+}
+.original{
+    background-color: brown;
+    /* transform:scaleX(0.6); */
+    /* transform:scaleY(0.4); */
+     /* shorthand property for scale x and scsle y */
+    transform: scale(0.6,0.4);
+    transform: scale(1);
+    /* transform: skew(30deg,5deg); */
+    /* transform: skew(-30deg,5deg); */
+    /* moving it through x-axis aand y-axis */
+    /* transform: translate(4rem,8rem);
+    transform: rotate(45deg);
+    transform: rotateX(90deg);
+    transform: rotateX(0deg);
+    transform: rotateX(60deg);
+    transform: rotateY(30deg);
+    transform: rotatey(60deg);
+    transform: rotateZ(40deg); */
+/* 
+    transition: 1s ease;
+    transition: 1s ease-in;
+    transition: 1s ease-out;
+    transition: 1s ease-in-out;
+    transition: 2s cubic-bezier(0,-0.48, 0.73, 2.24); */
+
+    /* delay the transition , the transition will happen after 4 seconds*/
+    /* transition: 2s ease-in 4s; */
+
+    /* consider all the properties in transition by using all*/
+    /* transition: 2s ease-in all; */
+    /* transition: 2s ease-in; */
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    transition-property: background-color,transform;
+}
+
+.original:hover{
+    transform: rotate(40deg);
+    transform: scale(0.7);
+    background-color: darkgoldenrod;
+}

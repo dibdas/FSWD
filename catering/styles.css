@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 85vw;
+    margin-inline: auto;
+    display: flex;
+
+    gap:1rem;
+    margin-block:2rem;
+    
+}
+figure{
+    width: 50%;
+ 
+}
+figure img{
+    width:39rem;
+    height:33rem;
+}
+section{
+    text-align: center;
+    padding-inline:1rem;
+  
+}
+h2,.tradition{
+    margin-block: 1.5rem;
+}
+.big-para{
+    font-weight: 700;
+}
+.small-para{
+    margin-block: 1rem;
+}
