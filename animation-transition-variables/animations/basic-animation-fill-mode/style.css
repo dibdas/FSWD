@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: aquamarine;
+}
+
+.box{
+    width: 5rem;
+    height: 5rem;
+    background-color:black;
+    animation: left-to-right 2s infinite alternate;
+    /* short-hand-property of animation-fill-mode:  */
+    animation: left-to-right 2s 1 forwards ;
+    /* in forwards the animation will stop at key frame 100% position: ;  */
+    animation-fill-mode: forwards;
+    /* 4s is the animation-delay, backwards work with animation-delay:  */
+    animation: left-to-right 2s 1 5s;
+    /* box will move backward and will remain there at 0% state 
+    till animation delay i.e 5s, so till 5s the box will be at 0% state
+    and then it move forward and change the background color */
+    animation-fill-mode: backwards;
+    animation-delay: 5s;
+    /* both will represent 0% as well as 100%  state*/
+    animation-fill-mode: both;
+
+}
+
+@keyframes left-to-right{
+    /* from is 0% to is 100%,if 20% 40% 50% ,write it manually */
+    from{
+        transform: translate(-6rem,0);
+        background-color: green;
+    }
+    to{
+        transform: translate(6rem,0);
+        background-color: blue;
+
+    }
+}
