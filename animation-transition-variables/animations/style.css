@@ -3,6 +3,10 @@
     padding:0;
     box-sizing: border-box;
 }
+:root{
+    --transition-distance: 20rem ;
+
+}
 
 .container{
     display: flex;
@@ -10,5 +14,60 @@
     align-items: center;
     height: 80vh;
     background-color: darkseagreen;
-    
+}
+.big-box{
+    width: 25rem;
+    height: 25rem;
+    border:  2px solid black;
+
+}
+.box{
+    width: 5rem;
+    height: 5rem;
+    background-color: azure;
+    /* animation: name of the animationi.e up-down time to occur the event 1s no.of times it will occur 6 */
+    animation: up-down 1s 6;
+    /* it will occur infinite no. of times , speed with which it will go up is smae as it goes down */
+    animation: up-down 2s infinite alternate;
+    /* animation: up-down 1s 3 alternate; */
+     /* making the box circle around big-box */
+    animation: up-down 4s infinite;
+}
+/* 1s is divided between 0% to 100%; */
+/* duration of the event is divided between 0% and 100%, it 1s or 3s, any value given  */
+/* first it will work and perform according to the property as mentioned from 0% to 50% and then 
+it will work from 50% to 100% according to property mentioned */
+@keyframes up-down {
+
+    0%{
+        transform: translateY(0);
+        /* making the box circle around big-box */
+        transform: translate(0,0);
+    }
+    /* making the box circle around big-box */
+    25%{
+        /* making the box circle around big-box */
+        transform: translate(0,var(--transition-distance));
+    }
+    /* 50% is the middle of 1s or 2s as mentioned above and it rotate and changes it color to black */
+    50%{
+        transform: rotate(180deg);
+        background-color: black;
+        /* moving 6rem across x-axis in the middle of 1s or 2s as mentioned above */
+        /* transform: translateX(6rem); */
+        /* making the box circle around big-box */
+        transform: translate(var(--transition-distance),var(--transition-distance));
+    }
+    /* making the box circle around big-box */
+    75%{
+        /* making the box circle around big-box */
+        transform: translate(var(--transition-distance),0) ;
+
+    }
+    100%{
+        /* transform: translateY(3rem); */
+        /* making the box circle around big-box */
+        transform: translate(0,0);
+    }
+
 }
