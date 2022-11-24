@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+script can also be written before the body tag , but it is not recommended 
+if script tag is above body tag then , if you try to access the html element from the js it will 
+give the error, because html element not yet been declared
+
+the website will become slow as you trying to load the script i.e  it will dowwnload and then run 
+before rendering the html element
+<script>
+    let title="das"
+    console.log(title)
+
+</script>
+<body>
+    <h1>Hi </h1>
+    <!-- by default display of the script is none -->
+    <script>
+        let name="das"
+        console.log(name)
+
+    </script>
+    multiple script can be defined 
+    <script src="script.js"></script>
+    <script src="script2.js"></script>
+    
+</body>
+</html>
