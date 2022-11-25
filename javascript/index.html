@@ -10,24 +10,46 @@ script can also be written before the body tag , but it is not recommended
 if script tag is above body tag then , if you try to access the html element from the js it will 
 give the error, because html element not yet been declared
 
-the website will become slow as you trying to load the script i.e  it will dowwnload and then run 
-before rendering the html element
+if the script is define before the body tag the website will become slow as you trying to load 
+the script i.e  it will download and then run before rendering the html elements
 <script>
     let title="das"
     console.log(title)
 
 </script>
-<body>
-    <h1>Hi </h1>
-    <!-- by default display of the script is none -->
-    <script>
-        let name="das"
-        console.log(name)
 
+<body>
+    <h1 id="demo">Hi </h1>
+    <!-- by default display of the script is none -->
+
+    <p>
+    recommended paractise-
+    script tag or script file declaring after all the html elements being declared,so that no error 
+    comes while accessing the html elements.. and no desired output wil be provided...
+    website will be faster as script is defined after the decaling all the HTML elements
+
+
+    to start the blank page write abount:blank in browser
+
+    </p>
+    <script>
+        let value="123das"
+        console.log(value)
     </script>
-    multiple script can be defined 
-    <script src="script.js"></script>
-    <script src="script2.js"></script>
+    <p>
+    You can place any number of scripts in an HTML document.
+    multiple script can be declared and will synchronously,
+    1st internal script will run, 2nd script1 will run then script2 will run</p>
+    <!-- <script src="script.js"></script> -->
+    <script src="conditions.js"></script>
+    <!-- <script src="input_output.js"></script> -->
     
 </body>
+
+<script>
+    let name="das"
+    console.log(name)
+    document.getElementById("demo").innerHTML = "My First JavaScript, and Its quite good";
+</script>
+
 </html>
