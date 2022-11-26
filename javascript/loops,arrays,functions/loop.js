@@ -59,8 +59,56 @@ do{
 
 }while(l<6)
 
+// using break
 for(let i=0;i<=6;i++){
-    console.log("hello",i);
+    if(i==3){
+        break;
+    }
+    else{
+        console.log("hello break",i);
+        
+    }
+
+    console.log("hello break",i);
+}
+
+// using continue
+
+for(let p=0;p<=6;p++){
+    if(p==3){
+        // as soon as you hit the continue statement , it does go after continue statement , it goes up
+        // to the updat expression
+        // with continue , that iteration condition is true that will be skipped
+        continue;
+    }
+    else{
+        console.log("hello continue",p);   
+    }
+    console.log("hello continue",p);
+}
+
+// using continue
+for(let c=0;c<=6;c++){
+    if(c==3 || c==1){
+        continue;
+    }
+    else{
+        console.log("hello going to school",c);   
+    }
+    console.log("hello not going to school ",c);
+}
+
+for(let i =0;i<newWords.length;i++){
+    console.log("hello ",newWords[i]);
+}
+
+let daily_stuff = new Array("eat", "sleep","walk","code ","repeat");
+
+for(let name in daily_stuff){
+    console.log("hello ",name,daily_stuff[name]);
 }
 
 
+for(let name of daily_stuff){
+    console.log("hello ",name);
+}
