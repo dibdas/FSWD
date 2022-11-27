@@ -95,3 +95,15 @@ console.log(arr);
 arr.push("lop","kol")
 arr.splice(0,0,"amit")
 console.log(arr);
+arr.splice(1,3)
+console.log(arr);
+
+arr.splice(0,3,76,89,143,76,"amit")
+
+// arr=[90] // redecalartion is not possible in const array variable
+console.log(arr);
+
+let arr1=[9,6,4]
+console.log(typeof arr1);
+arr1=7
+console.log(typeof arr1);
