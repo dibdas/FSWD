@@ -104,6 +104,6 @@ arr.splice(0,3,76,89,143,76,"amit")
 console.log(arr);
 
 let arr1=[9,6,4]
-console.log(typeof arr1);
+console.log(typeof arr1); // objects
 arr1=7
 console.log(typeof arr1);
