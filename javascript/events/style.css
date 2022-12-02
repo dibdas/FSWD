@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container,.grand-parent{
+    width: 500px;
+    height: 500px;
+    background-color: brown;
+    grid-template-columns: repeat(auto-fill,20rem)  ;
+    gap: 1rem;
+    position: relative;
+}
+
+.box{
+    height: 20px;
+    width:20px;
+    position: absolute;
+    background-color: teal;
+    color: aliceblue;
+    border-radius: 50%;
+}
+.parent{
+    height: 200px;
+    width:200px;
+    position: absolute;
+    background-color: yellow;
+    color: aliceblue;
+  
+
+}
+.child{
+    height: 120px;
+    width:120px;
+    position: absolute;
+    background-color: red;
+    transform: 0.5s ease-in;
+
+}
+.round{
+    border-radius: 50%;
+}
