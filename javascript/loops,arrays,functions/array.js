@@ -107,3 +107,118 @@ let arr1=[9,6,4]
 console.log(typeof arr1); // objects
 arr1=7
 console.log(typeof arr1);
+
+
+
+
+
+let arr3 = [4,7,"ki","potty",9,5,0]
+// arr3.forEach((element,index,arr)=>{ three things can be taken
+arr3.forEach((element)=>{
+    console.log("printing", element);
+
+})
+// passing the function as an argument to another function
+
+let myfunction =function(element,index){
+    console.log("printing and index", element , index);
+}
+
+function newfunction(element,index){
+    console.log("printing and index newfunction", element , index);
+}
+const arrowfunction=(element,index)=>{
+    console.log("printing and index arrowfunction", element , index);
+
+}
+
+
+arr3.forEach(arrowfunction)
+arr3.forEach(newfunction)
+arr3.forEach(myfunction)
+
+
+// passing these block inside the forEach function
+// (element,index){
+//     console.log("printing and index", element , index);
+// }
+
+
+// sorting the array like numbers
+let arr4=[6,76,4,8,54,23]
+arr4.sort((firstnumber,secondnumber)=>{
+    //ascending order
+    // if(firstnumber<secondnumber) return -1 // i.e <0 firstnumber will come before secondnumber
+    // if(secondnumber<firstnumber) return 1 //  i.e >0 firstnumber will come after secondnumber so swap
+    // return 0
+
+    //descending order
+    // if(firstnumber<secondnumber) return 1 firstnumber will come after  secondnumber 
+    // if(secondnumber<firstnumber) return -1 secondnumber will come after firstnumber so swap
+    // return 0
+
+    // one line statement or the shortcut for ascending and descending order
+    //return firstnumber-secondnumber // ascending order if < 0 firstnumber will come before secondnumber, if > 0 firstnumber will come after secondnumber
+     // return secondnumber-firstnumber // descending order if <0 firstnumber will come before secondnumber
+
+     return -(firstnumber -secondnumber) //descending order another way -ve value so swaping 
+
+    
+})
+// sorting happens majorly inside the return statement
+// return type is also a number , if return type is +ve then firstnumber is bigger,so firstnumber will
+// come after secondnumber, if -ve then secondnumber is bigger ,then secondnumber will come before firstnumber
+// and  if 0 then both of them are equal
+console.log(arr4);
+//  asecending order swaps when the retur value is > 0
+//  descending order swaps when the return value is < 0 
+
+const numbers = [23,76,12,3,5,7,9,21,34,65,98,90]
+numbers.sort(comparefunction)
+function comparefunction(a,b){
+    // in ascending order
+    // if <0 a wiil come first
+    // if >0 b will come second
+    //  if 0 nothing to be changed
+    // in descending order
+    // if <0 b wiil come first
+    // if >0 a will come second
+    //  if 0 nothing to be changed
+    // return a-b // ascending order
+    // return b-a  // descending order
+    return -(a-b) // descending order another way 
+    
+}
+console.log(numbers);
+
+const products =[
+    {
+    name:"laptop",
+    price:3000
+},
+{
+    name:"desktop",
+    price:2700
+},
+{
+    name:"tv",
+    price:2000
+},
+{
+    name:"mouse",
+    price:700
+},
+{
+    name:"vcr",
+    price:1850
+}
+]
+
+products.sort((p,q)=>{
+    // return p.price -q.price // ascending price
+    // return q.price-p.price //descending order
+    return -(p.price -q.price) // descending order in another way -ve value so swapping
+
+})
+console.log(products);
+
