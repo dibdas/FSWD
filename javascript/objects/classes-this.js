@@ -101,4 +101,47 @@ console.log(m); // m is 1
     // JSON
     // JSON is javascript Object Notation , javscript can be created in any other languages
 
+    const jsonString=
+    '{\"userId\":1,\"id\":1,\"title\":\"suntautfacererepellatprovidentoccaecatiexcepturioptioreprehenderit\",\"body\":\"quiaetsuscipit\\nsuscipitrecusandaeconsequunturexpeditaetcum\\nreprehenderitmolestiaeututquastotam\\nnostrumrerumestautemsuntremevenietarchitecto\"}'
+const newString ='{"name":"amit","wheels":5}'
+  const jsonObject= JSON.parse(jsonString)
+  const jsonObjectString= JSON.parse(newString)
+  console.log(jsonObject);
+  console.log(jsonObjectString);
+  const backToString = JSON.stringify(jsonObject)
+  const backToStringObject = JSON.stringify(jsonObjectString)
+  console.log(backToStringObject);
+  console.log(backToString);
+
+
+// class without constructor
+// same output for two objects
+  class VechileMode {
+    // constructor is also a function, which returns object
+    // constructor(wheels,model){
+        // behind the scenes of the constructor
+        // this is the current object i.e vechile, models and weels objects variables which are being 
+        // initialized  new keyword
+        // constructor is being used for initialization
+        // const this={}, 
+        // return this 
+        weeels =4
+        model="XUV"
+        // this.weels= wheels
+        // this.model= model
+    // }
     
+
+    start(){
+        console.log(`this is start ${this.weels + this.model}`);
+    }
+}
+
+const vechile3 = new VechileMode()
+const vechile4 = new VechileMode()
+console.log(vechile3);
+console.log(typeof vechile4,typeof vechile3);
+console.log(typeof Vechile);
+vechile1.start()
+
+console.log(vechile4);
