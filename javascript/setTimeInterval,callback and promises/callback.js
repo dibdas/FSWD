@@ -37,8 +37,13 @@ const orderPizza=(callback)=>{ // passing the function
     //     // console.log(`after callback calling`);
     // },4000)
     // console.log(`after settime end of order pizza`);
+    // console.log(callback);
+     // calling the cheese function
     getCheese((cheese)=>{
+         // getting the value cheese from the above callback and passing it as an argument
+        //  console.log(cheese);
         makeDough(cheese,(dough)=>{
+             // getting the value dough from the above callback and passing it as an argument
             bakePizza(dough,(pizza)=>{
                 callback(pizza)
             })
@@ -48,25 +53,30 @@ const orderPizza=(callback)=>{ // passing the function
 }
 
 function getCheese(next){
+    console.log(next);
     setTimeout(()=>{
-        const cheese =`getCheese`
-        console.log(`send the ${cheese}`);
+        const cheese =`🍕`
+        console.log(`sending the ${cheese}`);
         next(cheese)
     },2000)
 }
 
 function makeDough(cheese,next){
+    console.log(cheese);
+    console.log(next);
     setTimeout(()=>{
-        const dough =`making dough and  ${cheese}`
-        console.log(`sending the ${dough}`);
+        const dough =`🥟`
+        console.log(`sending the ${dough} and ${cheese}`);
         next(dough)
     },2000)
 }
 
 function bakePizza(dough,next){
+    console.log(next)
+    console.log(dough);;
     setTimeout(()=>{
-        const pizza_dough =`baking dough and ${dough}`
-        console.log(`bake pizza  ${dough}`);
+        const pizza_dough = `🍕`+ dough
+        console.log(`baking pizza with  ${pizza_dough}`);
         next(pizza_dough)
     },2000)
 
