@@ -62,3 +62,37 @@ Python is an interpreted language, which means the source code of a Python progr
 bytecode that is then executed by the Python virtual machine. Python is different from major compiled
 languages, such as C and C + +, as Python code is not required to be built and linked like code for 
 these languages.
+
+
+
+Using the const keyword on a Javascript object becomes a bit confusing — can the object's 
+properties and methods be changed once defined ?
+
+Yes, properties and methods be changed for a const object.
+
+A const declaration does not mean that the value of the variable cannot be changed. 
+It just means that the variable identifier cannot be reassigned.
+
+Primitive data types (Number, Boolean, String etc) are passed by value. 
+The variable identifier holds the value, and since identifier cannot be changed for
+ a const, it essentially means that the value cannot be changed here.
+
+However complex data types such as objects and arrays are passed by reference. 
+The variable identifier holds the reference, not the actual "value". So even if
+ the object's properties and methods are altered, it does not change the actual reference.
+
+
+Image result for primitive data types in javascript
+Primitive data types are number, string, boolean, NULL, Infinity and symbol. 
+Non-primitive data types is the object. The JavaScript arrays and functions are also 
+objects.
+
+
+Are primitive data types mutable in JavaScript?
+In JavaScript, objects and arrays are mutable by default, but primitive values are not — 
+once a primitive value is created,
+it cannot be changed, although the variable that holds it may be reassigned.
+
+
+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#temporal_dead_zone_tdz
+
