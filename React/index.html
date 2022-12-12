@@ -51,6 +51,32 @@
             useState returns an Array
 
 
+    when you call setcount function is called, the component is called again, it gets mounted
+    the previous component is removed, a new component is made with same name  , and the same thing happens again
+    and count gets increased
+
+
+    useState is actaully defining the function setCount and we are just calling it 
+  by doing it setCount(count+1) and returning from  let [count, setCount] = useState(0);
+
+
+
+// when you call setcount function is called, the component is called again,
+//  i.e it gets re-rendered it gets mounted and the previous component is removed
+// i.e unmounted from the DOM, a new component is made with same
+//  name is created , and the same thing happens again again we get the count variable
+// and setCount but the count value has changed , it gets the updated value
+// all the update operation are done in the virtual DOM,
+// setCount is creating another component ,when it is called and the new value is assined to
+// count variable
+const [count, setCount] = useState(0);
+count=count+1 // not allowed , as it is trying to change the vale of const variable
+setCount(count+1) // setCount is creating another component with updateed value of count
+
+// state variable can retains its value and it can re-render the entire component
+
+
+
 
     
 </body>
