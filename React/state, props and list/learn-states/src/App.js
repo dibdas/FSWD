@@ -5,6 +5,9 @@ import Child2 from "./components/Child2";
 import Counter from "./components/Counter";
 import Fruits from "./components/Fruits";
 import Notes from "./components/Notes";
+import Hooks from "./forms and hooks/Hooks";
+import NewsApp from "./forms and hooks/NewsApp";
+import UseEffectHook from "./forms and hooks/UseEffectHook";
 import UserForms from "./forms and hooks/UserForms";
 
 function App() {
@@ -28,7 +31,10 @@ function App() {
         uploadData={UploadDataFromParent}
       /> */}
 
-      <UserForms />
+      {/* <UserForms /> */}
+      {/* <UseEffectHook /> */}
+      {/* <Hooks /> */}
+      <NewsApp />
     </div>
   );
 }
