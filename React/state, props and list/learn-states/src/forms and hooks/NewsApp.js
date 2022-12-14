@@ -10,7 +10,7 @@ function NewsApp() {
   // const url = `https://newsapi.org/v2/everything?q=apple&from=2022-12-13&to=2022-12-13&sortBy=popularity&apiKey=${apiKey}`;
 
   const [newList, setNewsList] = useState([]);
-  const [query, setQuery] = useState("apple");
+  const [query, setQuery] = useState("tesla");
   const newsInputRef = useRef(null);
   const queryRef = useRef(null);
   //   useEffect here will work at the time of mounting or intial rendering of the component
@@ -20,7 +20,8 @@ function NewsApp() {
   // }, []);
   //   writing async so that await can vbe written inside  the function
 
-  const urlApiKey = `https://newsapi.org/v2/everything?q=${query}&from=2022-12-01&to=2022-12-13&sortBy=popularity&apiKey=${apiKey}`;
+  // const urlApiKey = `https://newsapi.org/v2/everything?q=${query}&from=2022-12-01&to=2022-12-13&sortBy=popularity&apiKey=${apiKey}`;
+  const urlApiKey = `https://newsapi.org/v2/everything?q=${query}&from=2022-11-14&sortBy=publishedAt&apiKey=b78ff68e34354f45bd6f27dbecf0dffc`;
   useEffect(() => {
     fetchData();
   }, [query]);
@@ -48,16 +49,23 @@ function NewsApp() {
   };
   function handleSubmit(event) {
     event.preventDefault();
-
     const inputRef = newsInputRef.current.value;
-    setQuery(inputRef);
+    console.log(inputRef);
+    // if (inputRef) {
+    //   setQuery(inputRef);
+    //   newsInputRef.current.value = "";
+    // } else {
+    //   const qref = event.target.value;
+    //   setQuery(event.target.value);
+    //   console.log(qref);
+    // }
     const qref = event.target.value;
-    setQuery(event.target.value);
-    console.log(qref);
+    inputRef ? setQuery(inputRef) : setQuery(qref);
+    newsInputRef.current.value = "";
 
     // setQuery(queryRef.current.value);
     // to remove the text written in the input box
-    newsInputRef.current.value = "";
+    // newsInputRef.current.value = "";
   }
 
   return (
