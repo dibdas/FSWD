@@ -1,0 +1,22 @@
+form{
+
+    justify-content: center;
+  
+   
+}
+input{
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin-inline: 1rem;
+}
+button{
+    padding: 0.5rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    background-color: green;
+    color: white;
+}
+.news-app{
+    width: 80vw;
+    margin-inline: auto;
+}
