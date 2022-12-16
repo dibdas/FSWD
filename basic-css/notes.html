@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    h1{
+        background-color: aquamarine;
+    }
+    h1{
+        background-color: brown;
+    }
+    </style>
+    <!-- /* latest styling will always work in case of css  , the property will be overriden */ -->
+     <!-- inline styling should always gets the preferences  -->
+     <h1 style="background-color: blue;">This is a new h1</h1>
+
+     css mean CAScading , which means the waterfall or the downfall be the preferences
+
+     In css whichever is defined at the bottom will override the property and the value
+     inline styling is above all the preferences, it will override all the property defined in internal and external styling
+in case of internal and external styling , whichever is defined at the bottom will work 
+external styling means <link rel="stylesheet" href="style.css">
+if the external styling is defined above the internal styling then the internal styling will work 
+<link rel="stylesheet" href="style.css">
+inside th external styleing file i,e style.css, whichever is at the bottom will override the property
+
+
+<style>
+    h1{
+        background-color: aquamarine;
+    }
+    h1{
+        background-color: brown;
+    }
+    .red-border{
+        border: 10px solid red;
+    }
+    /* latest styling will always work in case of css */
+</style>
+<link rel="stylesheet" href="style.css">
+<!-- style.css will override the red-border class property of the internal styling -->
+
+
+<link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        h1{
+            background-color: aquamarine;
+        }
+        
+        .red-border{
+            border: 10px solid red;
+        }
+        h1{
+            background-color: brown;
+        }
+        /* latest styling will always work in case of css */
+        /* internal styling will override the red-border class property of the style.css */
+
+        em works  relative to the immediate parent font-size;
+          viewwidth works according to the width of the screen
+        width:70vw;
+   
+</body>
+</html>
