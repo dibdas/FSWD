@@ -10,6 +10,8 @@ import Project from "./pages/Project";
 import FreePricing from "./pages/FreePricing";
 import PremiumPricing from "./pages/PremiumPricing";
 import FreeMiumPricing from "./pages/FreeMiumPricing";
+import ForPremiumUsers from "./pages/ForPremiumUsers";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 function App() {
   return (
@@ -29,6 +31,11 @@ function App() {
         {/* userId is url parameter,userId is dynamic */}
         <Route path="/user/:userId" element={<Profile />} />
         <Route path="/user/:userId/:projectId" element={<Project />} />
+
+        <Route element={<ProtectedRoute />}>
+          <Route path="/prime" element={<ForPremiumUsers />} />
+        </Route>
+
         <Route path="/pricing" element={<Pricing />}>
           <Route path="free" element={<FreePricing />} />
           <Route path="premium" element={<PremiumPricing />} />
