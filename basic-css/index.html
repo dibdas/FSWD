@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        /* h1{
+            background-color: aquamarine;
+        }
+        
+        .red-border{
+            border: 10px solid red;
+        }
+        h1{
+            background-color: brown;
+        } */
+        /* latest styling will always work in case of css */
+        /* internal styling will override the red-border class property of the style.css */ 
+        
+    </style>
+    
+</head>
+<!-- inline styling is above all the preferences, it will override all the property defined in internal and external styling
+in case of internal and external styling , whichever is defined at the bottom will work 
+external styling means <link rel="stylesheet" href="style.css">
+if the external styling is defined above the internal styling then the internal styling will work 
+<link rel="stylesheet" href="style.css"> -->
+<body>
+    <header>
+        <h1 class="red-border">Hi, How are you</h1>
+        <!-- <h1 style="background-color: red;">Hi, How are you</h1> -->
+        <img class="red-border" src="https://via.placeholder.com/200" alt="">
+
+    </header>
+    <!-- inline styling should always gets the preferences  -->
+    <!-- <h1 style="background-color: blue;">This is a new h1</h1> -->
+
+    <!-- class attribute will override the html attribute in case of css -->
+    <h1 class="red-border">This is a new h1</h1>
+
+    <p class="red-border;">Hi, I am a red paragraph</p>
+    <p style="color:red;">this is a red paragraph</p>
+    
+    <img class="red-border" src="https://via.placeholder.com/200" alt="">
+    <p id="hello1" class="hello">hello</p>
+    
+</body>
+<!-- <style>
+    h1{
+        background-color: aquamarine;
+    }
+    h1{
+        background-color: brown;
+    }
+    .red-border{
+        border: 10px solid red;
+    }
+    /* latest styling will always work in case of css */
+</style>
+<link rel="stylesheet" href="style.css"> -->
+
+
+</html>

@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* body{
+    background-color: red;
+  
+}
+h1{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+@media only screen and (max-width:600px) {
+    body{
+        background-color:green;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+} */
+
+/* mobile first approach */
+
+/* for mobiles */
+body{
+    background-color: red;
+}
+nav{
+
+}
+h1{
+    text-align: center;
+    font-size: 3rem;
+}
+p{
+    text-align: center;
+    font-size: 1.5rem;
+}
+ul{
+    list-style: none;
+    display: flex; 
+    flex-direction: column;
+}
+li{
+    /* display: block; */
+    flex-basis: 25%;
+    padding: 20px;
+    cursor: pointer;
+    border: 5px solid rgba(0, 83, 128, 0.797);
+    background-color: rgba(175, 187, 41, 0.748);
+}
+
+/* for big screens */
+/* for tablet mode */
+@media only screen and (min-width:641px) {
+    ul{
+        flex-direction: row;
+    }
+    li{
+        /* display: inline; */
+   
+        /* flex-basis: 100%; */
+    }
+    body{
+        background-color: blanchedalmond;
+
+    }
+    
+}
+
+/* can use multiple media queries for different screen */
+/* for laptop mode */
+@media only screen and (min-width:769px) {
+    body{
+        background-color: darkgreen;
+    }
+
+    h1{
+
+        font-size: 7rem;
+    }
+    p{
+ 
+        font-size: 3rem;
+    }
+    
+}
+/* potrait mode: width is lower than that of the height */
+/* landscape mode: width is more than that of the height */
+@media  screen and (orientation:landscape) {
+    body{
+        background-color: darkturquoise;
+    }
+    
+}

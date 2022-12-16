@@ -1,0 +1,173 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: grid;
+    /* grid-template-columns: 8rem 9rem  8rem 8rem; */
+
+    /* auto takes the width which is left  */
+    /* grid-template-columns: 8rem auto  8rem 8rem; */
+
+    /* every column should get the same width using auto */
+    /* grid-template-columns: auto auto auto auto; */
+
+    /* 4 columns each of width 200px
+     fixed width like 200px should not be mentioned, while squeezing the screen the container is 
+    getting reduced but width of the columns remains the same, hence the columns are overflowing
+    so dont use fixed width for columns
+    grid-template-columns: repeat(4,200px); */
+
+    /* all columns have same width */
+    grid-template-columns: repeat(4,1fr);
+
+    /* grid-template-columns: 1fr 2fr 4fr 2fr; */
+
+    /* grid-template-columns:  1fr 5fr 1fr; */
+
+    /* it will take first two rows , the rest of the rows will take as per to the content */
+    /* grid-template-rows: 100px 200px; */
+    /* it will work for the rows whose width you havent defined , the width rows you have defined
+    is 100px 200px and so by using grid-auto-rows:100px; , the rest of the rows get width is 100px */
+    grid-auto-rows: 100px;
+
+    /* grid-template-columns: repeat(4,100px); */
+    /* The justify-content property is used to align the whole grid inside the container. */
+    /* the whole grid wont take the width of the full container, if you have defined the absolute 
+     or the fixed width of the column */
+    
+    /* justify-content: center; */
+    /* justify-content: start; */
+    justify-content: space-between;
+
+    border: 1px solid red;
+    gap:0.2rem;
+}
+.box{
+    border: 1px solid green;
+    background-color: aqua;
+    padding:1rem;
+}
+#box-1{
+    /* left to right +ve line number, righ to left -ve line number */
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-column-end: 4;
+    grid-column-end: 5;
+
+    /* short hand property for grid-column-start: & grid-column-end:  */
+    grid-column: 1/-1;
+    /* OR */
+    grid-column: 1/5;
+
+}
+
+#box-2{
+    /* it will take the column line as defined or by default */
+    /* grid-column-start: 2; */
+    /* it will take two column on its own */
+    /* grid-column-end: span 2; */
+    /* row will start fro two */
+    /* grid-row-start: 2; */
+    /* it will take two rows on its own */
+    /* grid-row-end: span 2; */
+
+    /* shortcut of grid row start and end , column row start and end */
+    grid-area: 2 / 2/ span 2 / span 2 ;
+}
+
+#box-3{
+    /* grid-row: span 2; */
+    grid-row: span 3;
+}
+#box-6{
+    /* column start from line number 2 and the box will expand for tw columns */
+    grid-column: 2/span 2;
+}
+
+#box-8{
+    /* start from line 2 end with line 4 */
+    grid-row: 2/4;
+}
+#box-9{
+    /* grid-area is shortcut of column start and end row start  and end */
+    grid-area: 5/1/7/3;
+}
+
+
+.container-2{
+    display: grid;
+    margin-top:10rem;
+    /* grid-template-columns: 8rem 9rem  8rem 8rem; */
+
+    /* auto takes the width which is left  */
+    /* grid-template-columns: 8rem auto  8rem 8rem; */
+
+    /* every column should get the same width using auto */
+    /* grid-template-columns: auto auto auto auto; */
+
+    /* 4 columns each of width 200px
+     fixed width like 200px should not be mentioned, while squeezing the screen the container is 
+    getting reduced but width of the columns remains the same, hence the columns are overflowing
+    so dont use fixed width for columns
+    grid-template-columns: repeat(4,200px); */
+
+    /* all columns have same width */
+    grid-template-columns: repeat(4,1fr);
+
+    /* grid-template-columns: 1fr 2fr 4fr 2fr; */
+
+    /* grid-template-columns:  1fr 5fr 1fr; */
+
+    /* it will take first two rows , the rest of the rows will take as per to the content */
+    /* grid-template-rows: 100px 200px; */
+    /* it will work for the rows whose width you havent defined , the width rows you have defined
+    is 100px 200px and so by using grid-auto-rows:100px; , the rest of the rows get width is 100px */
+    grid-auto-rows: 100px;
+
+    /* grid-template-columns: repeat(4,100px); */
+    /* The justify-content property is used to align the whole grid inside the container. */
+    /* the whole grid wont take the width of the full container, if you have defined the absolute 
+     or the fixed width of the column */
+    
+    /* justify-content: center; */
+    /* justify-content: start; */
+    justify-content: space-between;
+
+    border: 1px solid red;
+    gap:0.2rem;
+}
+
+#box-1015{
+    /* the box will move left, right or center in that particular section according to the value given
+    to the  justify-self  */
+    /* justify-self: end; */
+
+    /* placing box in the grid at the cneter of a portion of grid */
+    justify-self: center;
+    align-self: center;
+    border: 2px slid green;
+
+}
+
+
+.container-3{
+    display: grid;
+    margin-top: 5rem;
+    width:40vw;
+    height:40vh;
+    border:1px solid blue;
+
+    /* justify-content: center;
+    align-content: center; */
+
+}
+.box-31{
+    width: 5rem;
+    height: 5rem;
+    /* replacemnet of justify-content: & align-items: is justify-self & align-self */
+    justify-self: center;
+    align-self: center;
+    border: 1px solid red;
+}

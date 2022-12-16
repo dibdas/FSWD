@@ -1,0 +1,70 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+
+body{
+    background-color: aquamarine;
+    display: inline-block; 
+
+}
+nav{
+    background-color: black;
+    /* height: 7vh; */
+    color: aliceblue;
+
+    /* to make the position fixed width should be define as 100%; */
+    width:100%;
+    position: fixed;
+}
+ul{
+    list-style: none;
+    text-align: end;
+    padding:1.8rem;
+    
+}
+li{
+    display: inline-block;
+    /* each li items having padding of 2rem, shortcut to pading left and right*/
+    padding-inline:2rem;
+    font-size:1.5rem;
+}
+
+.hero-left{
+ 
+    
+    width: 60%;
+    margin-top: 18vh;
+    margin-left: 10vw;
+    /* float and inline-block does not work at the same time */
+    float: left; 
+    /* or  */
+    /* display: inline-block; */
+    border:  2px solid red;
+}
+.subheading{
+    margin-top: 1.5rem;
+}
+.cta-explorer{
+    margin-top: 1.8rem;
+    padding: 1.5rem 2rem;
+}
+.hero-right{
+    /* width: 18%; */
+    float: right;
+    /* OR */
+    /* display: inline-block; */
+    margin-right: 2rem;
+    margin-top: 15vh;
+
+}
+.hero-right img{
+
+    width: 100%;
+}
+footer{
+    height: 200vh;
+}
