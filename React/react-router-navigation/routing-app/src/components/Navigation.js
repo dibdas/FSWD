@@ -4,7 +4,13 @@ import { Link } from "react-router-dom";
 function Navigation() {
   return (
     <nav>
-      <ul style={{ listStyle: `none` }}>
+      <ul
+        style={{
+          listStyle: `none`,
+          display: `flex`,
+          justifyContent: `space-between`,
+        }}
+      >
         <li>
           <button>
             <Link to="/pricing">Pricing</Link>
@@ -12,7 +18,16 @@ function Navigation() {
         </li>
         <li>
           <button>
-            <Link to="/about">About</Link>
+            <Link
+              to="/about"
+              state={{
+                from: "occupation ",
+                luckyNumber: `2345`,
+                anykey: `loginkey`,
+              }}
+            >
+              About
+            </Link>
           </button>
         </li>
         <li>
