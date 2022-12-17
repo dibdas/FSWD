@@ -15,7 +15,7 @@ function ListNotes() {
             <p>{note.id}</p>
             <h2>{note.title}</h2>
             <p>{note.description}</p>
-            {/* id is going inside the payload */}
+            {/* id is going inside the payload , we are passing id inside the payload */}
             <button onClick={() => dispatch(deleteNote(note.id))}>
               delete
             </button>
