@@ -14,7 +14,14 @@ const notesSlice = createSlice({
       console.log(action.payload);
       state.notes.push(action.payload);
     },
-    deleteNote: (state, action) => {},
+    deleteNote: (state, action) => {
+      // as filter does not change the original array , it returns the new array..,
+      // as we are getting the new array , so we need to pass the new array into old array
+      //   from here --- state.notes.filter((note) => action.payload != note.id) we getting the new array
+      //   so we did state.notes = ....
+      console.log(state.notes);
+      state.notes = state.notes.filter((note) => action.payload != note.id);
+    },
   },
 });
 export default notesSlice.reducer;
