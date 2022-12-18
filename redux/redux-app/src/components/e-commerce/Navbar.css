@@ -1,0 +1,16 @@
+nav{
+    background-color: grey;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 3px green;
+}
+.cart-layout{
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    padding-inline: 2rem;
+}
+h2{
+    padding-inline:2rem ;
+}
