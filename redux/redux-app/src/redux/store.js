@@ -5,12 +5,17 @@ import { configureStore } from "@reduxjs/toolkit";
 // importing the same name as probably given to the key
 import messageReducer from "./slices/messageSlice";
 import notesSlice from "./slices/notesSlice";
+import cartSlice from "./slices/cartSlice";
+import productReducer from "./slices/ProductSlice";
 export default configureStore({
   reducer: {
     // key:value different name
     // messageReducer: messageSlice,
     // key:value same name , if you want to keep the same name of key value pair as that of you have imported
-    messageReducer,
-    notesReducer: notesSlice,
+    // messageReducer,
+    // notesReducer: notesSlice,
+    // loadReducer,
+    cartReducer: cartSlice,
+    productReducer,
   },
 });
