@@ -1,0 +1,12 @@
+.product-list{
+    display: grid;
+    border:1px solid green;
+    grid-template-columns: repeat(4,1fr);
+    gap:0.7rem;
+    padding:0.8rem;
+    
+}
+.each-product{
+    border:2px solid red;
+    
+}
