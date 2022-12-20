@@ -1,0 +1,25 @@
+.product-image{
+    width: 100%;
+}
+.single-product{
+    width: 100%;
+    border: 2px solid blue;
+    border-radius: 10px;
+    height: 100%;
+}
+.card-info{
+    display: flex;
+    /* margin-block: auto; */
+    padding:0.5rem;
+    align-self: end;
+    
+    border:1px solid green;
+    justify-content: center;
+}
+button{
+    width:15%;
+    background-color:  rgb(128, 64, 0);
+    color: white;
+    border-radius: 50%;
+    font-size: 2rem;
+}
