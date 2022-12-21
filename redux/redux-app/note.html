@@ -1,0 +1,17 @@
+reducers are pure functions. not asyn functions
+reducers are synchronous in nature , they give the output based on their input 
+when we do the async function we actually do the side effects
+
+middleware is between dispatch action and reducer
+reducers are not allowed to do the async function so middleware will the async 
+operation as soons as the action is dispatched
+
+
+middleware will fetched the data from the server or the internet api, after that 
+I will dispatch my own actions, such that all seems to be working 
+synchronously to the reducers, then reducer will udate the store
+
+async function so it dispatch the action to the middleware,asunc function like 
+fetching the data from the server or the internet
+
+if it synchronous function then it will go to the reducer
