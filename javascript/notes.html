@@ -62,3 +62,95 @@ Python is an interpreted language, which means the source code of a Python progr
 bytecode that is then executed by the Python virtual machine. Python is different from major compiled
 languages, such as C and C + +, as Python code is not required to be built and linked like code for 
 these languages.
+
+
+differnce between map and for each 
+let arr = [1, 2, 3, 4, 5];
+undefined
+arr.forEach((num, index) => {
+    return arr[index] = num * 2;
+});
+undefined
+let arr = [1, 2, 3, 4, 5];arr.forEach((num, index) => {
+    return arr[index] = num * 2;
+});arr
+(5) [2, 4, 6, 8, 10]
+let arr = [1, 2, 3, 4, 5];arr.map((num, index) => {
+    return arr[index] = num * 2;
+});arr
+(5) [2, 4, 6, 8, 10]
+let arr = [1, 2, 3, 4, 5];arr.map((num, index) => {
+    return arr[index] = num * 2;
+});arr
+(5) [2, 4, 6, 8, 10]
+let arr = [1, 2, 3, 4, 5];arr.forEach((num, index) => {
+    return arr[index] = num * 2;
+});arr
+(5) [2, 4, 6, 8, 10]
+let arr = [5,8,5,3,1];arr.map((num, index) => {
+    return arr[index] = num * 2;
+});arr
+(5) [10, 16, 10, 6, 2]
+let arr = [6,8,9,3,2,1,7];arr.forEach((num, index) => {
+    return arr[index] = num * 2;
+});arr;
+(7) [12, 16, 18, 6, 4, 2, 14]
+let arr = [6,8,9,3,2,1,7];let t =arr.forEach((num, index) => {
+    return arr[index] = num * 2;
+});arr;t;
+undefined
+let arr = [5,8,5,3,1];let t=arr.map((num, index) => {
+    return arr[index] = num * 2;
+});arr;t;
+(5) [10, 16, 10, 6, 2]
+let arr = [6,8,9,3,2,1,7];let t =arr.forEach((num, index) => {
+    return arr[index] = num * 2;
+});arr;t;
+undefined
+let arr = [6,8,9,3,2,1,7];let t =arr.forEach((num, index) => {
+    return arr[index] = num * 2;
+});t;
+undefined
+let arr = [6,8,9,3,2,1,7];let t =arr.forEach((num, index) => {
+    return arr[index] = num * 2;
+});arr;
+(7) [12, 16, 18, 6, 4, 2, 14]
+let arr = [5,8,5,3,1];let t=arr.map((num, index) => {
+    return arr[index] = num * 2;
+});arr;
+(5) [10, 16, 10, 6, 2]
+let arr = [5,8,9,3,4,6,7];let t=arr.map((num, index) => {
+    return arr[index] = num * 2;
+});arr;
+(7) [10, 16, 18, 6, 8, 12, 14]
+let arr = [5,8,9,3,4,6,7];let t=arr.map((num, index) => {
+    return arr[index] = num * 2;
+});t;
+(7) [10, 16, 18, 6, 8, 12, 14]
+
+map return new array , for each does not return new array
+map and for each both can mutate the currnt array or the original array 
+map is faster than for each
+foreach return undefined
+map returns new array
+using map() may be preferable if you favor functional programming.
+Key Takeaways
+Just about anything you can do with forEach() you can do with map(), 
+and vise versa.
+map() allocates memory and stores return values. forEach() throws away 
+return values and always returns undefined.
+forEach() will allow a callback function to mutate the current array. 
+map() will instead return a new array.ing map() may be preferable if you favor functional programming.
+
+And map() might be preferable when changing or altering data. 
+Not only is it faster but it returns a new Array. This means we
+can do cool things like chaining on other methods ( map(), filter(),
+reduce(), etc.)
+
+map helps in chaining the methods
+
+let arr = [1, 2, 3, 4, 5];
+let arr2 = arr.map(num => num * 2).filter(num => num > 5);
+// arr2 = [6, 8, 10]
+
+https://codeburst.io/javascript-map-vs-foreach-f38111822c0f
