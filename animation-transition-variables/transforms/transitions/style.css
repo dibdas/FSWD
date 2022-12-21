@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: darkseagreen;
+    
+}
+.button{
+    font-size:2rem;
+    padding: 1rem 2rem;
+    letter-spacing: 0.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 1s ease-in;
+    position: relative;
+    z-index: 1;
+    border: 2px solid black;
+
+    /* for the transition making the overflow hidden which at the left or at the right  */
+    overflow: hidden;
+
+}
+
+/* you can redefine the properties which are stated in the button class */
+.button:hover{
+    /* text-decoration:  does not work with tarnsition; */
+    text-decoration:overline;
+    /* background-color: blanchedalmond; */
+}
+
+/* :before is just like empty div */
+/* .button::hover is just like an empty div */
+
+.button::before{
+    content: "ls ";
+    content: " ";
+    /* position must be absolute so that it can be moved anywhere, and parent should be relative */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: brown;
+    /* z-index is pushing the before element back of the button */
+    z-index: -1; 
+    /* to make the before align exactly with the button */
+    top:0;
+    left:0;
+    /* in order to make the transition */
+    left: -100%;
+    border-radius:50%;
+    width: 10rem;
+    height: 10rem;
+    /* smoothly moving in and out */
+    transition: 1s ease-in-out;
+    /* another transition */
+    left: 0;
+    border-radius: 0;
+    width:100%;
+    height:100%;
+
+}
+.button:hover::before{
+    background-color: blueviolet;
+    left: 0;
+    transform: scale(3);
+    transform: rotate(180deg);
+
+    
+}

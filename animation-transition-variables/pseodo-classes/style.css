@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    border: 1px solid red;
+}
+a{
+    font-size: 2rem;
+}
+a:hover{
+    color: green;
+}
+.click-tag:visited{
+    /* color: red; */
+}
+/* a:visited{
+    color: brown;
+} */
+
+li:first-child{
+    background-color: blueviolet;
+}
+li:last-child{
+    font-size: 2rem;
+}
+/* an +b */
+/* 4th child of the li item from the top */
+/* li:nth-child(4){ */
+/* only the even li element are getting the color */
+    li:nth-child(2n){
+
+    background-color: darkolivegreen;
+}
+/* ood number getting the color */
+li:nth-child(2n+1){
+    background-color: cadetblue;
+}
+li:nth-child(3n){
+    background-color: hotpink;
+}
+
+p::first-line{
+    font-size: 1.3rem;
+}
+p::first-letter{
+    font-size: 3rem;
+    background-color: aquamarine;
+    color: blueviolet;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+.box::before{
+    content: 'before';
+    /* width: 100px;
+    height: 100px; */
+    background-color: yellowgreen;
+    position: absolute;
+    z-index: 2;
+}
+.box::after{
+    content: 'hello';
+    /* width: 100px;
+    height: 100px; */
+    background-color:maroon ;
+    position: absolute;
+    z-index: 2;
+}

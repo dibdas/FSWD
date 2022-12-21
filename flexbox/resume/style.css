@@ -1,0 +1,141 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 100vw;
+    display: flex;
+    margin-inline: auto;
+    flex-direction: column;
+
+    gap: 1.2rem;
+    background-color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.left-container{
+    /* width:100%; */
+    flex-basis: 100%;
+    box-shadow: 4px 4px 4px #ccce;
+    padding-block: 0.1rem ;
+
+}
+.right-container{
+    /* width:70%; */
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    margin-block:0.5rem;
+}
+.image-box{
+    width:100%;
+    position: relative;
+}
+ul{
+    /* margin-block works for top and bottom like margin-inline */
+    margin-block:1rem;
+    list-style: none;
+}
+ul>li{
+    margin-top: 0.4rem;
+}
+hr{
+    border:1px solid #eee;
+}
+.image-box img{
+    width: 100%;
+}
+.name{
+    position: absolute;
+    /* top:7rem; */
+    /* OR */
+    bottom:0.1rem;
+    left:3rem;
+    color:aliceblue;
+    font-size: 2.5rem;
+}
+.icon-text{
+    display: flex;
+    gap:1rem;
+    align-items: baseline;
+}
+
+.pogress-bar{
+    background-color: aliceblue;
+    /* border: 2px solid blue; */
+    border-radius: 10px;
+    margin-block:0.5rem ;
+    
+}
+.pogress{
+    background-color:maroon;
+    color: whitesmoke;
+    /* width: 90%; */
+    /* border: 5px solid green ; */
+    border-radius: 10px;
+    text-align: center;
+    font-size:0.5rem;
+    padding-block: 0.2rem;
+}
+.work-experience{
+    margin-block:0.8rem;
+    padding-block: 1rem;
+}
+.card{
+    box-shadow: 5px 5px 6px black;
+    background-color: aliceblue;
+    padding-inline:1rem ;
+   
+}
+p{
+    font-size: 1rem;
+    color: #888;
+}
+h3{
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: #888;
+    margin-block: 0.3rem;
+}
+.subtext{
+    color: black;
+}
+.skills{
+    margin-block:0.1rem;
+}
+.languages{
+    margin-block: 0.1rem;
+}
+
+.badge{
+    background-color: teal;
+    color: azure;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding:0.1rem;
+}
+.subtext{
+    margin-block: 1rem;
+}
+i,.date{
+    font-size: 1.3rem;
+    color: teal;
+}
+
+
+@media screen and (min-width:641px){
+    .container{
+        width: 70vw;
+        flex-direction: row;
+    }
+    .left-container{
+        flex-basis:35%;
+    }
+    .right-container{
+        /* width:70%; */
+        flex-basis: 65%;
+    }
+    
+}

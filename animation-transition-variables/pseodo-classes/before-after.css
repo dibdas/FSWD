@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+}
+p{
+    font-size:3rem;
+}
+p::before{
+    content: "this is a message ";
+}
+p::after{
+    content: " after the message";
+}

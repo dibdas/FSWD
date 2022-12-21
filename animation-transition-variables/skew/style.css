@@ -1,0 +1,51 @@
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    gap:1rem;
+    background-color: darkseagreen;
+}
+.box{
+    width:10rem;
+    height:10rem;
+    /* new transition for circles */
+    width:2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: black;
+    /* alternate slows down while the animation comig to its normal position */
+    animation: skew-animation 2s ease-in-out infinite alternate;
+    animation: up-down 1s ease-in-out infinite alternate;
+}
+@keyframes skew-animation{
+    0%{
+        /* transform: skew(20deg,20deg); */
+        /* transform: skew(0,0); */
+        transform: skew(-20deg,-20deg);
+    }
+    100%{
+        transform: skew(20deg,20deg)
+    }
+}
+
+
+@keyframes up-down{
+    0%{
+        transform: translate(0,-1rem);
+        transform: translate(0,0);
+
+    }
+    100%{
+        transform: translate(0,1rem);
+        transform: translate(0,-5rem);
+
+    }
+}
