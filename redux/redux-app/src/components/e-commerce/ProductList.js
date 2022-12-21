@@ -10,12 +10,17 @@ import { Spin } from "antd";
 
 function ProductList() {
   const dispatch = useDispatch();
+  // access whatever is there in the state of the productreducer
+  // the inititalState constains products,error,status can be accessed using useSelector
   const products = useSelector((state) => state.productReducer.products);
   const status = useSelector((state) => state.productReducer.status);
+  const error = useSelector((stateE) => stateE.productReducer.error);
 
   useEffect(() => {
     // fetchdata();
     // after moving fetchdata to redux async thunk
+    // passing an input value into redux-thunk via fetch data
+    // dispatch(fetchData(params or `hello`))
     dispatch(fetchData());
   }, []);
 
@@ -41,6 +46,14 @@ function ProductList() {
   //   }
   if (status === "loading") {
     return <Spin style={{ marginBlock: `10rem` }} size="large" />;
+  }
+  if (status === "failed") {
+    return (
+      <>
+        <h1>oops!... Something went wrong!....</h1>
+        <h2>{error}</h2>
+      </>
+    );
   }
   return (
     <div className="product-list">
