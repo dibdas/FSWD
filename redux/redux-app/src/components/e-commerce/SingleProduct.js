@@ -21,6 +21,9 @@ function SingleProduct({ product }) {
       />
       <h2 className="product-title">{product.title}</h2>
       <p className="product-price">{product.price}</p>
+      <p style={{ fontSize: `1.6rem`, color: `black` }}>
+        Category:{product.category.name}
+      </p>
       <div className="card-info">
         <button onClick={() => dispatch(addTocart(product.id, product.price))}>
           +
