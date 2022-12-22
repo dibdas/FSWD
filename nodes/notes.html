@@ -1,0 +1,62 @@
+Singlethread is for synchronous operation
+Gaming , video  editing , rendering this are CPU intensive work 
+New thread means new resources ,new RAM should be allocated
+
+#traditional resources
+A server can handle multiple request
+server has thread pool , it creates new thread whenever request comes to the server
+New thread means new resources ,new different process, new RAM should be allocated , 
+almost separated from the server ,and after fetching data from the server will provide to the request
+when new request comes it creates new thread , then data is being fetched and send it to the request
+
+
+Node server
+when R1 i.e request1 or R2i.e request2 comes to node server it creates new threads and send to Linux
+based server. where code is in C++..Node .js server creates new thread and after creating new thread it
+spawn C++ thread, C++ fetch the data and send the response to the request made
+Linux based OS threads are very fast , node js can access directly Os threads so fast and scalable..
+
+Nodejs never blocks itself , therefore it is single threaded aand non-blocking
+
+Event loop listen to new jobs coming to it , it checks how many jobs have come to it and listen to
+what are the jobs have been completed and thats why it creates a complete loop.. ansychronous job
+are done by the help of event loop
+
+Synchronous jobs are completed by single thred
+
+thread is a child of a process. One process can create multiple threads ,which  works asynchronously 
+and it create response and send the reponse to the request
+
+If you need to do (a+b) operation it also need to generate a process, one process can 
+spawn multiple threads
+One process can access multiple request and can spawn multiple threads ...
+
+Single thread is a kind of resource where only synchronous work occurs..,metaphorically .., its a kind of
+single road
+
+when a request R1 comes to nodejs server , single thread does the synchronous work i.e 
+the CPU intensive work, and for the asynchronous work it creates the C++ thread,basically the OS thread
+C++ thread of R1 do the async work i.e the I/O work, and let say it take 1.2 secs
+R1 is holding the single thread for about very few seconds 0.00001sec 
+In the meantime the sigle thread gets unblocked.. so it is being blocked only for  0.00001sec 
+and R2 also comes single thread does the synchronous work it the  creates C++ thread for aysnc  work
+In the meantime the Response of R1 request will come after 1.2 secs , at the clients end loading 
+will show at the client page , the loading time includes internet latency , 
+fetching data server for I/O work take a bit of as it is involved multiple operations..
+
+single thread does the CPU intense work that works very fast and 
+single thread can handle several request, here in Nodejs request comes , does the sync work,where it uses
+minimal resources unlike the traditional servers where multiple threads need to be made
+and if the single thread seems new C++ thread should be made , it makes ,and C++ thread is very light 
+,as it work with OS , it is fast also
+
+Non-blocking is lik not blocking the the main thread i.e the main thread , for the desired work i.e asyn work
+it is spawning the new C++ thread  
+
+Nodejs Server make the C++ thread out of the box which which I dont have to write 
+
+OS code is written in C++..Every harware systems read and write in Assembly language ..
+And just above the assesmbly , C++ layer is being put on , which makes the OS work fast ,
+C++ is fast pograming language 
+
+
