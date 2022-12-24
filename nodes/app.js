@@ -31,6 +31,9 @@
 const express = require("express");
 // invoking the express, getting the express app
 const app = express();
+// express does not work with req.body.., if express need to workout with body.., need to pass middleware
+// named as body parser...or  here using express.json().. which works as parser
+app.use(express.json());
 
 // when the server hits the desired url '/user' then inside the server this anonymous function
 // i.e (req, res) => {} will run whe request and response is being passed
@@ -55,6 +58,22 @@ app.get("/", (request, response) => {
   //   response.send ... anything can be send by response.send
   //   response.send({ success: true }); // anything can be send
 });
+
+// alaway response in the form of res.json not res.send
+app.post("/user", function (req, res) {
+  console.log(req.body);
+  const sum = req.body.a + req.body.b;
+  //   res.json(sum);
+  const multipy = req.body.a * req.body.b;
+
+  res.json({
+    name: `karan`,
+    age: 61,
+    sum,
+    multipy,
+  });
+});
+
 // to check whether the server is listening or not , runor the call the callback function, where you can do anything
 // here we are doing console.log("listening to port :4000");
 // callback function i.e () => {} is there check whether it is listening properly or not, therefore
