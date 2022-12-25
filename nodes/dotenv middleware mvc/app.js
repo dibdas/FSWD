@@ -70,6 +70,8 @@ console.log(process.env.SECRET_API_KEY);
 // so entry point is app.js  requestwill go to mainRouter as /api ,then request will go to authrouter
 //  as /auth i.e  auth module then login,signup endpoints as end point /login or signup
 // /api/auth/login
+// main router is the parent router where request will go first then the request goes to
+// authRouter and postRouter which is the child router
 app.use("/api", mainRouter);
 // OR
 app.use("/", mainRouter);
