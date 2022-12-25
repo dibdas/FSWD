@@ -77,4 +77,102 @@ Dev dependencies are those packages which I dont want to install inside the prod
 how to install dev-dependecy 
 npm i -D <package_name>
 
+in terminal type node then process.env ,so node followed by process.env
+after that a lot environment variables willbe visible on the screen, this are called environment variables
+, with the help of these environment variables , OS tries to configure multiple  things of  node like 
+path.log
 
+process.env.my_age=43 follwed by process.env ..my_age variable will make an entry to the environment list and
+come at the bottom 
+this entry i.e my_age can also be accessed by OS 
+process is the variable of OS, with the help of this process OS can access environment variables 
+
+npm init will generate package.json by asking several question like name, version,
+description,author,lisence,git etc
+npm init -y wont ask anything and will generate the package.json
+
+
+<h1>important</h1>
+arrow function needs to decalred and defined i.e needs to initialized
+before it is called or being passed 
+b()
+// ^ReferenceError: Cannot access 'b' before initialization
+const b = () => {
+  console.log(PORT);
+};
+U sign beside the folder name means it is inside the git eco system,
+after entering the files inside the gitignore U sign wont be there , so when you do git status,
+those files which are mentioned inside the gitignore wont show up 
+
+we do keep the secret data inside the .env file ,
+.env file is very sensitive towards spaces and tabs 
+secret data like api key 
+
+wherever the server runs , it is the responsibility of the process of that OS to provide the PORT data
+const PORT = process.env.PORT; // getting the data PORT by using process.env.PORT by the procees of the OS
+to configure the .env file we need to install dotenv library
+with the help of dotenv library we can add the variables inside the .env files to the process environment 
+variables
+
+.env is the file where we store secret data , and we dont want that to be send to github
+
+
+<h1>Router</h1>
+
+localhost:8000/api/auth/signup.. /api for main router /auth for authrouter, /signup is the end point 
+mainRouter is the parent, its has two child routers i.e authrouter and postRouter and then it has its individual endpoints
+i.e /login ,signup and /post /all
+
+
+
+localhost:8000/api/post/all.. /api is for main router /auth for authrouter, and /all is for the API end points
+
+// by default it will go to index.js as index.js is entry point of any folder in javascript
+const mainRouter = require("./routes/");
+
+const router = require("express").Router();
+console.log(router); //function
+[Function: router] {
+  params: {},
+  _params: [],
+  caseSensitive: undefined,
+  mergeParams: undefined,
+  strict: undefined,
+  stack: []
+}
+
+// router is also a kind of middleware
+// when the url hit the /post routes API end point, postRouter will be triggered
+// control comes to the app.js  first and checks the routes API and its end points ,
+// then it gets redirected to desired router,
+// postRouter wil work when the API end points is /post
+// moving to routes folder
+// app.use("/post", postRouter);
+// when the API end points includes /auth, it will redirect to authRouter , then authRouter will decide
+//  upon API end points which router it should call
+// control comes to the app.js  first and checks the routes API end points ,
+// then it gets redirected to desired router
+// moving to routes folder
+// app.use("/auth", authRouter);
+// so the routes will go like /api/post/all or /api/auth/login or signup
+// so entry point is app.js request will go to mainRouter as /api,then request will go to
+// postrouter i.e post module then  endpoint i.e all
+// /api/post/all
+// so entry point is app.js  requestwill go to mainRouter as /api ,then request will go to authrouter
+//  as /auth i.e  auth module then login,signup endpoints as end point /login or signup
+// /api/auth/login
+// main router is the parent router where request will go first then the request goes to
+// authRouter and postRouter which is the child router
+app.use("/api", mainRouter);
+// OR
+app.use("/", mainRouter);
+
+
+
+<h1>.ENV file</h1>
+/ wherever the server runs , it is the responsibility of the process of that OS to provide the PORT data
+// OS has the object named as process which is grabbing the environment variable PORT
+const PORT = process.env.PORT; // getting the data PORT by using process.env.PORT by the procees of the OS
+
+// configuring the file ,the variable inside the.env file has become environment variables
+dotEnvName.config({ path: "./.env" });
