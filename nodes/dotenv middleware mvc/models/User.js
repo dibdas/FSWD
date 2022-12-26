@@ -10,3 +10,4 @@ const users = [
     password: `3798`,
   },
 ];
+module.exports = users;
