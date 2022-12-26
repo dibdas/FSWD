@@ -23,20 +23,36 @@ app.use(express.json());
 //middleware
 // setting the middleware1 which will work across all routes , and before the mainRouter as mainRouter
 // is linked with controller , so evenetually before the controllers
-function middleware1(req, res, next) {
-  console.log(req.url);
-  console.log(req.method, new Date().toDateString());
-  // calling next() function immediately, when I realised work of the middleware1 is over
-  // next();
-  if (req.body && req.body.name === "peter") {
-    next();
-  } else {
-    res.send(`not allowed`);
-  }
-}
-app.use(middleware1);
+// function middleware1(req, res, next) {
+//   console.log(req.url);
+//   console.log(req.method, new Date().toDateString());
+//   // calling next() function immediately, when I realised work of the middleware1 is over
+// always use the next() inside the middleware
+//if you dont call the next() inside the middleware , api call will be stuck over there,
+// api call will looping over there , it wont move forward
+//   // next();
+//   if (req.body && req.body.name === "peter") {
+//     next();
+//   } else {
+//     res.send(`not allowed`);
+//   }
+// }
+// app.use(middleware1);
 // OR
-// app.use((res,req,next)=>{})
+app.use((req, res, next) => {
+  console.log(req.url, ` middleware in app.js`);
+  console.log(req.method, new Date().toDateString());
+  // if (req.body && req.body.name === "peter") {
+  // always use the next() inside the middleware
+  //if you dont call the next() inside the middleware , api call will be stuck over there,
+  // api call will looping over there , it wont move forward
+  // can check it please by sending an api, check it by disable the next()
+  // next() function usually moves the control to the next operation middleware
+  next();
+  // } else {
+  // res.send(`not allowed`);
+  // }
+});
 
 // passing the arrow function as a callback
 // while passing arrow function as a callback , it needs to be declared and defined first , and then
@@ -93,7 +109,7 @@ console.log(process.env.SECRET_API_KEY);
 // authRouter and postRouter which is the child router
 app.use("/api", mainRouter);
 // OR
-app.use("/", mainRouter);
+// app.use("/", mainRouter);
 
 app.get("/", (req, res) => {
   res.send({
