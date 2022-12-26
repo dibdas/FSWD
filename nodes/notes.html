@@ -176,3 +176,18 @@ const PORT = process.env.PORT; // getting the data PORT by using process.env.POR
 
 // configuring the file ,the variable inside the.env file has become environment variables
 dotEnvName.config({ path: "./.env" });
+
+
+<h1>Middlewares</h1>
+before we reach the end point ,  everything we use inside express like app.use() is a middleware 
+Middleware is between routes and controller ,
+Middlewares can do 
+<ul>
+  <li>can change or update the request object</li>
+  <li>can send the response without moving to the controller</li>
+  <li>it is used when the whole app,or major part of the app , is using common functionality</li>
+  <li>it is used to implement the dry rule</li>
+  <li>example:checking the token of every request,logging every request inside controller</li>
+</ul>
+you can add chain of middlewares suppose M1, M2,M1 calls M2
+M1 next() it goes to M2, M2 next() it goes to controller
