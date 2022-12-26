@@ -80,10 +80,6 @@ app.post("/user", function (req, res) {
 // after listin to port No. 5000 it calls or run  the callback function
 // after app listen it calls or run the callback function and output give listening to port :5000 in the terminal
 
-app.listen(5000, function () {
-  console.log("listening to port :5000");
-});
-
 // app.listen(5000, () => {
 //   console.log("listening to port :5000");
 // });
