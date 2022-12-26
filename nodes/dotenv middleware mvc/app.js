@@ -7,7 +7,6 @@ const express = require("express");
 // into different APIs and its end Points
 
 const mainRouter = require("./routes/");
-
 // importing post router
 // moving to the router folder
 // const postRouter = require("./routes/post");
@@ -18,6 +17,26 @@ const mainRouter = require("./routes/");
 // extracting the object from the express
 const app = express();
 // console.log(app);
+// express.json() .. it is a middleware ..that let the express know that body being passed is JSON,
+// it also let to access the JSON elements and converts body-type json into json elements
+app.use(express.json());
+//middleware
+// setting the middleware1 which will work across all routes , and before the mainRouter as mainRouter
+// is linked with controller , so evenetually before the controllers
+function middleware1(req, res, next) {
+  console.log(req.url);
+  console.log(req.method, new Date().toDateString());
+  // calling next() function immediately, when I realised work of the middleware1 is over
+  // next();
+  if (req.body && req.body.name === "peter") {
+    next();
+  } else {
+    res.send(`not allowed`);
+  }
+}
+app.use(middleware1);
+// OR
+// app.use((res,req,next)=>{})
 
 // passing the arrow function as a callback
 // while passing arrow function as a callback , it needs to be declared and defined first , and then
