@@ -1,4 +1,5 @@
 const { loginController, signupController } = require("../controllers/auth");
+const { logger } = require("../middlewares/Logger");
 
 // breaking the code into layers to enhance its scalibility , helps in debugging
 const router = require("express").Router();
@@ -13,7 +14,8 @@ const router = require("express").Router();
 //     text: `this is for login`,
 //   });
 // });
-router.post("/login", loginController);
+// can implement couple of middlewares here beside the logger
+router.post("/login", logger, loginController);
 
 // router.post("/signup", (req, res) => {
 //   res.json({
@@ -26,6 +28,7 @@ router.post("/login", loginController);
 //     text: `this is for sign up`,
 //   });
 // });
-router.post("/signup", signupController);
+//  can implement couple of middlewares here beside the logger
+router.post("/signup", logger, signupController);
 
 module.exports = router;
