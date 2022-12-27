@@ -10,4 +10,5 @@ const authRouter = require("./auth");
 router.use("/post", postRouter);
 // multiple middlewares can be used in here in between
 router.use("/auth", logger, authRouter);
+
 module.exports = router;
