@@ -1,4 +1,8 @@
-const { loginController, signupController } = require("../controllers/auth");
+const {
+  loginController,
+  signupController,
+  fetchUserController,
+} = require("../controllers/auth");
 const { logger } = require("../middlewares/Logger");
 
 // breaking the code into layers to enhance its scalibility , helps in debugging
@@ -30,5 +34,6 @@ router.post("/login", logger, loginController);
 // });
 //  can implement couple of middlewares here beside the logger
 router.post("/signup", logger, signupController);
+router.get("/user/:id", logger, fetchUserController);
 
 module.exports = router;
