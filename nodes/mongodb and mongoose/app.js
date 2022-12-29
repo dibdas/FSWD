@@ -96,7 +96,8 @@ async function makeUser(newUser) {
   console.log(`${savedUser} data saved `);
   console.log(`${user}`);
 }
-// makeUser({ email: "denver@gmail.com", password: "hello9056", age: 87 }); // age will not be taken care of as it is not defined in the schema
+// age will not be taken care of as it is not defined in the schema
+// makeUser({email: "petergmail.com",password: "peter9056",age: 87,marks: 53});
 
 // modifying the schema using at the end , because 1000ms error and mongoose create models first then connection
 // const user = new User({
@@ -140,4 +141,39 @@ const findUsersByEmail = async (email) => {
   console.log(`${user}`); //getting the desired data or document
 };
 // findUsersByEmail();
-findUsersByEmail("amit@gmail.com");
+// findUsersByEmail("amit@gmail.com");
+
+const findUsersByMarks = async (number) => {
+  // const user = await User.findOne({ marks: 53 });
+  // getting marks above the number that is being passed as an argument
+  // const user = await User.findOne({ marks: number });
+  // return the first document or the data present in the database that matches with the condition
+  // const user = await User.findOne({ marks: { $gt: 30 } });
+  // return all the data or the documents that matches with the condition
+  const user = await User.find({ marks: { $gt: 30 } });
+  // const user = await User.find({ marks: { $gt: number } });
+  console.log(`result ${user}`);
+};
+// findUsersByMarks(20);
+// UsersByEmail("amit@gmail.com");
+
+const findUsersByRegex = async () => {
+  // regex is regular expression
+  // it will return all the data or the documents which has de in their email
+  // const user = await User.find({ email: { $regex: "de" } });
+  const user = await User.find({ email: { $regex: "am" } });
+  // const user = await User.find({ marks: { $gt: number } });
+  console.log(`result ${user}`);
+};
+// findUsersByRegex();
+
+const updateMarks = async (userId, marks) => {
+  const user = await User.findById(userId);
+  // updating the marks of the user, which has been fetched or returned
+  user.marks = marks;
+  // save() is an async function so it you have wait 1 or 2 seconds , therefore adding await
+  const updatedResult = await user.save();
+  console.log(updatedResult);
+  return updatedResult;
+};
+updateMarks("63ad2994bd1110c90ca3d218", 36);
