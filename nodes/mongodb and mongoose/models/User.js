@@ -3,10 +3,11 @@ const mongoose = require("mongoose");
 const userSchema = mongoose.Schema({
   email: String,
   password: String,
+  marks: Number,
   //   age: Number,
   //   name: String,
   //   hobbies:[Number] // storing array of numbers
-  //   hibbies:[String] // storing the array of String values
+  //   hobbies:[String] // storing the array of String values
 });
 // model name is user
 // name of the schema is userSchema
