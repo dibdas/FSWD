@@ -1,4 +1,5 @@
 const dotEnvName = require("dotenv");
+const dbConnect = require("./dbConnect");
 // configuring the file ,the variable inside the.env file has become environment variables
 dotEnvName.config({ path: "./.env" });
 const express = require("express");
@@ -84,6 +85,7 @@ app.use((req, res, next) => {
 const PORT = process.env.PORT; // getting the data PORT by using process.env.PORT by the procees of the OS
 // can access secret_api_key, as path of .env has been configured in the above line second line
 console.log(process.env.SECRET_API_KEY);
+dbConnect();
 
 // router is also a kind of middleware
 // when the url hit the /post routes API end point, postRouter will be triggered
