@@ -92,6 +92,10 @@ async function makeUser(newUser) {
   //  user-defined outside the function
 
   const user = new User(newUser); // in memory user document created
+  // without using await user can also be saved ,
+  // it is just that without await no data will be returned
+  // without await no data will be returned ,
+  // use await when you would like to do something with data that being returned
   const savedUser = await user.save(); // user saved inside database
   console.log(`${savedUser} data saved `);
   console.log(`${user}`);
@@ -176,4 +180,37 @@ const updateMarks = async (userId, marks) => {
   console.log(updatedResult);
   return updatedResult;
 };
-updateMarks("63ad2994bd1110c90ca3d218", 36);
+// updateMarks("63ad2994bd1110c90ca3d218", 36);
+
+const updateUserDetails = async (userId, newUser) => {
+  const user = await User.findById(userId);
+
+  user.marks = newUser.marks;
+  user.email = newUser.email;
+
+  const updatedResult = await user.save();
+  console.log(updatedResult);
+  return updatedResult;
+};
+// updateUserDetails("63ad2994bd1110c90ca3d218", {
+//   email: "devkumar@gmail.com",
+//   marks: 78,
+// });
+
+const deleteUser = async (userId) => {
+  const user = await User.findById(userId);
+  if (!user) return;
+  console.log(`got user`);
+  // as await is added so user.delete() will execute first then console.log will run
+  // await user.delete()
+  user.delete();
+  // console.log(`user deleted`);
+  // user.delete() as await is not  added so then console.log will run first, then use.delete() will execute
+  // console.log(`user deleted`);
+  // use await, when you would like to do with data that being returned after using delete() method
+  // const data = await user.delete(); // use await when you want to see what being returned , and would like to do something about it
+  console.log(`user deleted`);
+  console.log(`user deleted ${user}`);
+};
+deleteUser("63adebe1a88e510b867e1e08");
+// findUsers();
