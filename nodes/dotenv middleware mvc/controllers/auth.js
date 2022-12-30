@@ -62,6 +62,8 @@ const loginController = async (req, res) => {
     return;
   }
   // const user = users.find((user) => user.email === email);
+  // .find will return the data in an array of objects,
+  // and finOne will return the object so it can be accessed and modified
   const user = await Users.findOne({ email });
   if (!user) {
     res.status(404).json({ text: `User not found` });
