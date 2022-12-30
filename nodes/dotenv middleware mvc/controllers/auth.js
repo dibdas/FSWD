@@ -1,4 +1,4 @@
-const users = require("../models/User");
+const Users = require("../models/User");
 // as we are not using mongodb, all the data are being stored in javascriot memory, so when you
 // reload the server , which are being deleted from the javascriot memory which are being
 // created at the time of creation
@@ -20,13 +20,29 @@ const signupController = async (req, res) => {
     // control flow return from here
     return;
   }
-  const id = Math.floor(Math.random() * 1000);
+  // creating the id
+  // const id = Math.floor(Math.random() * 1000); removing the id as id created by mongoose by default
   // check if the user email is already present or not
-  users.push({ id, email, password });
+  // users.push({ id, email, password });
+
+  const findUser = await Users.findOne({ email });
+  if (findUser) {
+    res.status(403).json({
+      text: `user present sign up with another email`,
+    });
+    return;
+  }
+  const newuser = new Users({ email, password });
+  const user = await newuser.save();
+
+  // res.status(200).json({
+  //   id,
+  //   email,
+  //   password,
+  // });
+
   res.status(200).json({
-    id,
-    email,
-    password,
+    user,
   });
   // control flow return from here
   return;
@@ -45,7 +61,8 @@ const loginController = async (req, res) => {
     // control flow return from here
     return;
   }
-  const user = users.find((user) => user.email === email);
+  // const user = users.find((user) => user.email === email);
+  const user = await Users.findOne({ email });
   if (!user) {
     res.status(404).json({ text: `User not found` });
     // control flow return from here
