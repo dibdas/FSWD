@@ -8,6 +8,10 @@ function Card({ name, email, ...props }) {
     padding: `1rem`,
     boxShadow: `2px 2px 2px grey`,
   };
+
+  function handleClick() {
+    alert("warning");
+  }
   return (
     // <div>
     //   <h1>Amit Kumar Sharma</h1>
@@ -20,6 +24,27 @@ function Card({ name, email, ...props }) {
       <p>{email}</p>
       <p>{props.age}</p>
       <p>{props.mobile}</p>
+
+      {/* this will work only when the component got reloaded , but after thay when you 
+      click on the button the the alert box will not pop up*/}
+
+      {/* <button onClick={handleClick()}>Click me</button> */}
+
+      {/* this will work only when the component got reloaded , but after thay when you 
+      click on the button the the alert box will not pop up*/}
+
+      {/* <button onClick={alert("warning")}>Click me</button> */}
+      {/* arrow anonymous function */}
+      {/* <button onClick={() => alert("warning")}>Click me</button> */}
+
+      {/* anonymous function */}
+      <button
+        onClick={function () {
+          alert("warning");
+        }}
+      >
+        Click me
+      </button>
     </div>
   );
 }
