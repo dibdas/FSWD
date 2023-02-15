@@ -34,10 +34,10 @@ function Card({ name, email, ...props }) {
       click on the button the the alert box will not pop up*/}
 
       {/* <button onClick={alert("warning")}>Click me</button> */}
-      {/* arrow anonymous function */}
+      {/* passing an arrow anonymous function */}
       {/* <button onClick={() => alert("warning")}>Click me</button> */}
 
-      {/* anonymous function */}
+      {/* passing an anonymous function */}
       <button
         onClick={function () {
           alert("warning");
